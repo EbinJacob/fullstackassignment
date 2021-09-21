@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 2 qn 1</title>
+  <!-- <script src="j.js"></script> -->
+  <script>
+    function agevalidation(){
+      let x = document.getElementById("age").value;
+      let text;
+      if(isNaN(x) || x < 18)
+      text = "Invalid!";
+      else
+      text = "Valid!";
+    
+    document.getElementById("agev").innerHTML=text;
+    }
+
+    function countr(){
+      var text = document.getElementById("desc").value;
+      var num = 1;
+      for(var i = 0; i < text.length; i++){
+      var currentCharacter = text[i];
+      if(currentCharacter == " ")
+      num += 1;
+      }
+      document.getElementById("count").innerHTML = num;
+    }
+  </script>
+</head>
+<body>
+  <h2 style="text-align: center;">Age verification!</h2>
+  <form style="text-align: center;" action="">
+    <label for="age">Please enter your age here: </label>
+    <input type="text" name="age" id="age" placeholder="Your Age..." onblur="agevalidation()">
+    <span id="agev"></span><br><br>
+    <label for="desc">Enter a description about yourself!: </label>
+    <input name="desc" id="desc" placeholder="Something about yourself..." style="width: 50ch; height: 10ch;"><br><br>
+    <button type="button" onclick="countr()">Count!</button>
+    <p id="count"></p>
+  </form>
+</body>
+</html>
